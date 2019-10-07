@@ -1,5 +1,5 @@
 'use strict'
-const string = require('../values/strings/spanish')
+const string = require('./strings/spanish')
 
 module.exports ={
     e000:{
