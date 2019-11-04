@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "21479025-2cd5-4805-bbbe-ad585d2fb479",
+		"name": "Real Soccer",
+		"description": "ReactJs mentorship program",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"displayName\": \"Edwin Anaya\",\n\t\"email\": \"eanaya@lean-tech.io\",\n\t\"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"eanaya@lean-tech.io\",\n\t\"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZDliNmE0NzAxYzE2YmY0ZDFiMDQ5OWUiLCJpYXQiOjE1NzA0NjY0MzYsImV4cCI6MTU3MTY3NjAzNn0.fxP_7fJQQbOWF5eWivMUOjoGGOe2QpyA7PCBtO218vQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZDliNmE0NzAxYzE2YmY0ZDFiMDQ5OWUiLCJpYXQiOjE1NzA0NjY0MzYsImV4cCI6MTU3MTY3NjAzNn0.fxP_7fJQQbOWF5eWivMUOjoGGOe2QpyA7PCBtO218vQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/user/5d9b6a4701c16bf4d1b0499e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"5d9b6a4701c16bf4d1b0499e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZDliNmE0NzAxYzE2YmY0ZDFiMDQ5OWUiLCJpYXQiOjE1NzA0NjY0MzYsImV4cCI6MTU3MTY3NjAzNn0.fxP_7fJQQbOWF5eWivMUOjoGGOe2QpyA7PCBtO218vQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"eanaya@lean-tech.io\",\n    \"displayName\": \"Edwin Anaya H.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/5d9b6a4701c16bf4d1b0499e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"5d9b6a4701c16bf4d1b0499e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZDliNmE0NzAxYzE2YmY0ZDFiMDQ5OWUiLCJpYXQiOjE1NzA0NjY0MzYsImV4cCI6MTU3MTY3NjAzNn0.fxP_7fJQQbOWF5eWivMUOjoGGOe2QpyA7PCBtO218vQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/user/5d9b6a4701c16bf4d1b0499e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"5d9b6a4701c16bf4d1b0499e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZDliNmE0NzAxYzE2YmY0ZDFiMDQ5OWUiLCJpYXQiOjE1NzA0NjY0MzYsImV4cCI6MTU3MTY3NjAzNn0.fxP_7fJQQbOWF5eWivMUOjoGGOe2QpyA7PCBtO218vQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/user/hello/Edwin Anaya",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"hello",
+								"Edwin Anaya"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "private",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZDliNmE0NzAxYzE2YmY0ZDFiMDQ5OWUiLCJpYXQiOjE1NzA0NjY0MzYsImV4cCI6MTU3MTY3NjAzNn0.fxP_7fJQQbOWF5eWivMUOjoGGOe2QpyA7PCBtO218vQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/api/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"private"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
