@@ -5,14 +5,16 @@ const service = require('../services')
 
 function signUp (req, res) {
 
-    if (!req.body.email || !req.body.password || !req.body.displayName) return res.status(403).send({msg: 'faltan parametros'})
+    if (!req.body.displayName || !req.body.username || !req.body.email || !req.body.password || !req.body.birthday) return res.status(403).send({msg: 'Faltan parámetros'})
 
     Model.findOne({ email: req.body.email}, (err, user) => {
 
         const userRequest = new Model({
-            email: req.body.email,
             displayName: req.body.displayName,
-            password: req.body.password
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+            birthday: req.body.birthday
         })
 
         if (err) return res.status(500).send({msg: err})
@@ -21,22 +23,22 @@ function signUp (req, res) {
         userRequest.save((err)=>{
             if(err) return res.status(500).send({msg: `Error al crear usuario ${err}`})
         
-            return res.status(200).send({ msg: `usuario creado exitosamente!`, /*token: service.createToken(user)*/ })
+            return res.status(200).send({ msg: `Usuario creado exitosamente!`, /*token: service.createToken(user)*/ })
         })
     })
 }
 
 function signIn (req, res) {
 
-    if (!req.body.email || !req.body.password) return res.status(403).send({msg: 'faltan parametros'})
+    if (!req.body.username || !req.body.password) return res.status(403).send({msg: 'Faltan parámetros'})
 
-    Model.findOne({ email: req.body.email}, (err, user) => {
+    Model.findOne({ username: req.body.username}, (err, user) => {
         if (err) return res.status(500).send({msg: err})
-        if(!user) return res.status(404).send({msg: `no existe el usuario!`})
+        if(!user) return res.status(404).send({msg: `No existe el usuario!`})
 
         user.comparePassword(req.body.password, function(err, isMatch) {
             if (err) return res.status(500).send({msg: `! ${err}`})
-            if(!isMatch) return res.status(404).send({msg: `contraseña errada!`})
+            if(!isMatch) return res.status(404).send({msg: `Contraseña errada!`})
 
             req.user = user
                 res.status(200).send({
