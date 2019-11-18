@@ -23,6 +23,8 @@ api.get('/', (req,res) =>{
 
 api.post('/auth', authCtrl.signIn)
 api.post('/auth/register', authCtrl.signUp)
+api.post('/auth/forgotPassword', authCtrl.forgotPassword)
+api.put('/auth/resetPassword', authCtrl.resetPassword)
 
 /*
 * Routes for users

@@ -1,6 +1,6 @@
 module.exports = {
     port: process.env.PORT || 3001,
-    db: process.env.MONGODB_URI || 'mongodb+srv://edwik:95091310024@realsoccer-spksl.gcp.mongodb.net/admin?retryWrites=true&w=majority',
-    //db: process.env.MONGODB || 'mongodb://190.144.179.82:2027/mockserverdb',
+    db: 'mongodb://testUser:testpassword@pmontoya-shard-00-00-codbc.mongodb.net:27017,pmontoya-shard-00-01-codbc.mongodb.net:27017,pmontoya-shard-00-02-codbc.mongodb.net:27017/test?ssl=true&replicaSet=pmontoya-shard-0&authSource=admin&retryWrites=true&w=majority',
+    // db: process.env.MONGODB_URI || 'mongodb://localhost:27017/mockserverdb',
     SECRET_TOKEN: 'mysecrettoken$2019'
 }

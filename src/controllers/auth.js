@@ -5,7 +5,7 @@ const service = require('../services')
 
 function signUp (req, res) {
 
-    if (!req.body.displayName || !req.body.username || !req.body.email || !req.body.password || !req.body.birthday) return res.status(403).send({msg: 'Faltan parámetros'})
+    if (!req.body.displayName || !req.body.username || !req.body.email || !req.body.password || !req.body.birthday) return res.status(400).send({ msg: 'Faltan parámetros' })
 
     Model.findOne({ email: req.body.email}, (err, user) => {
 
@@ -21,7 +21,7 @@ function signUp (req, res) {
         if(user) return res.status(404).send({msg: `Ya Existe el usuario!`})
 
         userRequest.save((err)=>{
-            if(err) return res.status(500).send({msg: `Error al crear usuario ${err}`})
+            if(err) return res.status(500).send({ msg: `Error al crear usuario ${err}` })
         
             return res.status(200).send({ msg: `Usuario creado exitosamente!`, /*token: service.createToken(user)*/ })
         })
@@ -30,7 +30,7 @@ function signUp (req, res) {
 
 function signIn (req, res) {
 
-    if (!req.body.username || !req.body.password) return res.status(403).send({msg: 'Faltan parámetros'})
+    if (!req.body.username || !req.body.password) return res.status(400).send({ msg: 'Faltan parámetros' })
 
     Model.findOne({ username: req.body.username}, (err, user) => {
         if (err) return res.status(500).send({msg: err})
@@ -50,4 +50,17 @@ function signIn (req, res) {
     })
 }
 
-module.exports = { signIn, signUp }
+function resetPassword (req, res) {
+    if(!req.body.email || !req.body.password) return res.status(400).send({ msg: 'Faltan parámetros' })
+
+    return res.status(200).send({ msg: 'Password actualizado correctamente' })
+}
+
+//TO DO 
+function forgotPassword (req, res) {
+    if(!req.body.email) return res.status(400).send({ msg: 'Faltan parámetros' })
+    
+    return res.status(200).send({ msg: 'Email enviado correctamente!' })
+}
+
+module.exports = { signIn, signUp, resetPassword, forgotPassword }
