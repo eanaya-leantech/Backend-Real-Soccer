@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "21479025-2cd5-4805-bbbe-ad585d2fb479",
+		"_postman_id": "8133104e-363d-4411-87d1-32cee425c84c",
 		"name": "Real Soccer",
 		"description": "ReactJs mentorship program",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -23,7 +23,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"displayName\": \"Edwin Anaya\",\n\t\"email\": \"eanaya@lean-tech.io\",\n\t\"password\": \"123456\"\n}",
+							"raw": "{\n\t\"displayName\": \"Pepito Perez\",\n\t\"username\": \"pperez\",\n\t\"email\": \"pperez@correo.com\",\n\t\"password\": \"0123456\",\n\t\"birthday\": \"1991-01-23\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -60,7 +60,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"eanaya@lean-tech.io\",\n\t\"password\": \"123456\"\n}",
+							"raw": "{\n\t\"username\": \"pperez\",\n\t\"password\": \"0123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -77,6 +77,87 @@
 							"path": [
 								"api",
 								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ForgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "pperez@correo.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/forgotPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetPassword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "000000",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pperez@correo.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"resetPassword"
 							]
 						}
 					},
@@ -101,7 +182,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZDliNmE0NzAxYzE2YmY0ZDFiMDQ5OWUiLCJpYXQiOjE1NzA0NjY0MzYsImV4cCI6MTU3MTY3NjAzNn0.fxP_7fJQQbOWF5eWivMUOjoGGOe2QpyA7PCBtO218vQ",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZGNhMTUwMmNhMTg2OTNjNmM2ZTNiNTQiLCJpYXQiOjE1NzM1MjQ3NjEsImV4cCI6MTU3NDczNDM2MX0.AFiVB0Ypk18T3dLauhWr4gyK-SkHpSpDuQzZ-q1KRiY",
 								"type": "text"
 							}
 						],
